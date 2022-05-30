@@ -45,6 +45,26 @@ template {
     display: none
 }
 
+#introModal {
+    color: #613232;
+    text-align: center;
+}
+
+#high-five {
+    cursor: pointer;
+}
+
+.high-five-hand {
+    position: absolute;
+    height: 215px;
+    z-index: 99;
+    transform: translateX(15px);
+    opacity: 0;
+    transition: all 100ms ease-in;
+}
+.high-five-hand.active {
+    transform: translateX(0px);
+}
 a {
     background-color: transparent
 }

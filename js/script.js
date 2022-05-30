@@ -1,4 +1,29 @@
 $(document).ready(function () {
+    // document.body.addEventListener("mousemove", function () {
+    //     document.getElementById("my_audio").play();
+    // })
+    const myTimeout = setTimeout(() => {
+        $('#introModal').modal('show')
+    }, 500);
+    $('#high-five').click(() => {
+        let area = $('#high-five')
+        $('.high-five-hand').css({
+            "display": "block",
+            "top": area.attr("coords").split(',')[1] + "px",
+            "left": area.attr("coords").split(',')[0] + "px",
+            "opacity": 1
+        })
+        document.getElementById("my_audio").play();
+        const myTimeout = setTimeout(() => {
+            $('.high-five-hand').addClass('active')
+            const myTimeout = setTimeout(() => {
+                $('.high-five-hand').removeClass('active')
+                const myTimeout = setTimeout(() => {
+                    $('#introModal').modal('hide')
+                }, 200);
+            }, 100);
+        }, 100);
+    })
     $('#gift').on('click', function () {
         function random(max) {
             return Math.random() * (max - 0) + 0;
